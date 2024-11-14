@@ -15,10 +15,10 @@ function App() {
 const isInputValid = userInput.duration >=1;
 
 function handleChange(inputIdentifier, newValue ){
-    setUserInput(prevInput => {
+    setUserInput((prevInput) => {
         return {
             ...prevInput,
-            [inputIdentifier] : newValue
+            [inputIdentifier] : +newValue
         }
     })
 }
