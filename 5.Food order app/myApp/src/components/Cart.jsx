@@ -20,14 +20,14 @@ export default function Cart() {
     userProgressCtx.hideCart();
   }
 
-  function  handleGoToCheckout(){
+  function handleGoToCheckout() {
     userProgressCtx.ShowCheckout();
   }
 
   return (
-    <Modal 
-      className='cart' 
-      open={userProgressCtx.progress === 'cart'} 
+    <Modal
+      className='cart'
+      open={userProgressCtx.progress === 'cart'}
       onClose={userProgressCtx.progress === 'cart' ? handleCloseCart : null} // to prevent bug on esc button
     >
       <h2>Your Cart</h2>
@@ -38,8 +38,8 @@ export default function Cart() {
             name={item.name}
             quantity={item.quantity}
             price={item.price}
-            onIncrease={() =>cartCtx.addItem(item)}
-            onDecrease={() =>cartCtx.removeItem(item.id)}
+            onIncrease={() => cartCtx.addItem(item)}
+            onDecrease={() => cartCtx.removeItem(item.id)}
           />
         ))}
       </ul>
